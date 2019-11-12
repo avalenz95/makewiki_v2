@@ -30,4 +30,7 @@ urlpatterns = [
 
     # Wiki App
     path('', include('wiki.urls')),
+
+    #accounts app
+    path('', include('accounts.urls')),
 ]
