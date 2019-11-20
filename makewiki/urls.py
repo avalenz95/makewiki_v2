@@ -26,11 +26,12 @@ urlpatterns = [
     # Admin Site
     path('admin/', admin.site.urls),
     #Authentication
+
+    #accounts app
+    path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
 
     # Wiki App
     path('', include('wiki.urls')),
 
-    #accounts app
-    path('', include('accounts.urls')),
 ]

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView
 
 from wiki.models import Page
 
@@ -26,3 +27,29 @@ class PageDetailView(DetailView):
         return render(request, 'page.html', {
           'page': page
         })
+
+
+#Page Create view sends the post request
+class PageCreateView(CreateView):
+
+  #user wants to submit form
+  def get(self, request, *args, **kwargs):
+      #get form
+      context = {'form': PageForm()}
+      #pass form to wiki/newpage and render template
+      return render(request, 'newpage.html', context)
+
+  #user has submitted form
+  def post(self, request, *args, **kwargs):
+      #form submitted via post request
+      form = PageForm(request.POST)
+      #form validation check
+      if form.is_valid():
+          #save form
+          page = form.save()
+
+          #redirect the user to home 
+          return HttpResponseRedirect(reverse_lazy(''))
+
+      #render the form again if it is not valid
+      return render(request, 'newpage.html', {'form': form})
