@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "/Users/ablades/.local/share/virtualenvs/makewiki_v2-kTkC3Nof/bin/python"
+    "python.pythonPath": "/Users/ablades/.local/share/virtualenvs/makewiki_v2-kTkC3Nof/bin/python",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
 }

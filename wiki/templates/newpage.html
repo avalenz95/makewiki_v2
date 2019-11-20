@@ -2,11 +2,12 @@
 
 {% block content %}
 
-<h1>Test</h1>
-{% endblock %}
 
 <form method="POST">
     {% csrf_token %}
+    <!--Renders form as paragraph-->
     {{ form.as_p }}
     <input type="submit" value="Send the names to the server!">
 </form>
+
+{% endblock %}

@@ -4,6 +4,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
 
 from wiki.models import Page
+from wiki.forms import PageForm
 
 
 class PageListView(ListView):
@@ -17,16 +18,16 @@ class PageListView(ListView):
           'pages': pages
         })
 
-class PageDetailView(DetailView):
-    """ Renders a specific page based on it's slug."""
-    model = Page
+#class PageDetailView(DetailView):
+#    """ Renders a specific page based on it's slug."""
+#    model = Page
 
-    def get(self, request, slug):
-        """ Returns a specific wiki page by slug. """
-        page = self.get_queryset().get(slug__iexact=slug)
-        return render(request, 'page.html', {
-          'page': page
-        })
+#    def get(self, request, slug):
+#        """ Returns a specific wiki page by slug. """
+#        page = self.get_queryset().get(slug__iexact=slug)
+#        return render(request, 'page.html', {
+#          'page': page
+#        })
 
 
 #Page Create view sends the post request
