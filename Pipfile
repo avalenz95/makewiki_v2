@@ -9,6 +9,7 @@ verify_ssl = true
 pytz = "==2019.3"
 sqlparse = "==0.3.0"
 Django = "==2.2.7"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
