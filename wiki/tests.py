@@ -80,10 +80,14 @@ class PageCreateViewTest(TestCase):
 
     def test_create_submission(self):
         #create post request
-        post_request = self.client.post('/create-post',{
-            'title': 'Test Post',
-            'content': 'this test' ,
-            'author': 'admin'},follow=True,)
+        post_request = self.client.post('/create-post',
+            {
+                'title': 'Test Post',
+                'content': 'this test' ,
+                'author': 'admin'
+            },
+            follow=True,
+        )
 
         # Check that the response is 302 redirect.
         self.assertEqual(post_request.status_code, 302)
